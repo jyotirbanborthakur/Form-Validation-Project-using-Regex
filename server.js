@@ -104,19 +104,22 @@ btn.addEventListener("click",(e)=>
 {
     let alerts = document.getElementById("alert");
     e.preventDefault();
-   if(nameValue && emailValue && phoneValue){
+   if(nameValue && emailValue && phoneValue &&cityValue &&zipValue){
         
         alerts.classList.remove("alert-danger","d-none")
         alerts.classList.add("alert-success")
         alerts.innerHTML=`Thanks! form submitted`
+        setTimeout(() => {
+            alerts.classList.add("d-none")
+         }, 2000);
    }
    else
    {
     alerts.classList.add("alert-danger")
     alerts.classList.remove("alert-success","d-none")
     alerts.innerHTML=`Kindly enter inputs correctly`
+ setTimeout(() => {
+    alerts.classList.add("d-none")
+ }, 2000);
    }
-   phoneClick.value=""
-   nameValue.value=""
-   emailClick.value=""
 })
